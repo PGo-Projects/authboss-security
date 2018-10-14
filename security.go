@@ -45,6 +45,12 @@ func MustSetupAuthbossWithStores(config *authBossConfig, sessionName string, s S
 	cookieStore = c
 
 	AuthBoss.Config.Paths.RootURL = config.rootURL
+	AuthBoss.Config.Paths.NotAuthorized = config.notAuthorized
+	AuthBoss.Config.Paths.AuthLoginOK = config.authLoginOK
+	AuthBoss.Config.Paths.LogoutOK = config.logoutOK
+	AuthBoss.Config.Paths.OAuth2LoginOK = config.oauth2LoginOK
+	AuthBoss.Config.Paths.OAuth2LoginNotOK = config.oauth2LoginNotOK
+	AuthBoss.Config.Paths.RegisterOK = config.registerOK
 	AuthBoss.Config.Modules.LogoutMethod = "GET"
 	AuthBoss.Config.Modules.ExpireAfter = config.expireAfter
 
