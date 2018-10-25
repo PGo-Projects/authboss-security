@@ -94,3 +94,7 @@ func RegisterProtectedRoutes(mux chi.Router, config ProtectedRoutesConfig, route
 		}
 	})
 }
+
+func GetCurrentUser(r *http.Request) (string, error) {
+	return AuthBoss.CurrentUserID(r)
+}
